@@ -4,19 +4,27 @@ var weather = 'load_res.php?id=WEATHER';
 var infos_url = 'load_res.php?id=INFO';
 
 function reloadWeather() {
+    
+    setTimeout(function() {
+        reloadWeather();
+    }, 600000);
+    
     $.getJSON(weather, function(data) {
         if (data) {
             $("#weather_info").html('<table><tr><td style="width: 220px"><i class="wi-strong-wind"/>&nbsp;' + Math.round(data.wind.speed * 3.6, 1) + ' km/h</td><td style="width: 210px"><i class="wi-sunset"/>&nbsp;' + new Date(data.sys.sunset * 1000).toTimeString().substring(0, 5) + ' Uhr</td></tr></table>');
             $("#weather_actual").html('<table><tr><td style="width: 190px" align="center"><i class="' + getIconCode(data.weather[0].icon) + '"/></td><td>' + Math.round(data.main.temp * 10 / 5) * 0.5 + '°</td></tr></table>');
         }
 
-        setTimeout(function() {
-            reloadWeather();
-        }, 600000);
+        
     });
 }
 
 function reloadForecast() {
+
+    setTimeout(function() {
+        reloadForecast();
+    }, 600000);
+        
     $.getJSON(forecast, function(data) {
 
         if (data) {
@@ -45,22 +53,19 @@ function reloadForecast() {
             $("#fc_5_max").html(Math.round(data.list[4].temp.max) + '°');
             $("#fc_6_max").html(Math.round(data.list[5].temp.max) + '°');
         }
-
-        setTimeout(function() {
-            reloadForecast();
-        }, 600000);
     });
 }
 
 function reloadMessages() {
-    $('#messages').html('');
-    addSpecialDay();
-    addGarbage();
-    addInfo();
 
     setTimeout(function() {
         reloadMessages();
     }, 60000);
+    
+    $('#messages').html('');
+    addSpecialDay();
+    addGarbage();
+    addInfo();
 }
 
 function getTemp(str) {
@@ -69,6 +74,11 @@ function getTemp(str) {
 }
 
 function checkVersion() {
+    
+    setTimeout(function() {
+        checkVersion();
+    }, 3000);
+    
     $('#version').html(gitHash);
     $.getJSON('githash.php', {}, function(json, textStatus) {
         if (json) {
@@ -78,13 +88,14 @@ function checkVersion() {
             }
         }
     });
-    setTimeout(function() {
-        checkVersion();
-    }, 3000);
 }
 ;
 
 function reloadSolar() {
+
+    setTimeout(function() {
+        reloadSolar();
+    }, 10000);
 
     $.getJSON('solar.json', function(solar) {
         //getTemp(solar['DeltaSol BX Plus [Regler]']['Temperature sensor 1']))
@@ -115,10 +126,6 @@ function reloadSolar() {
 
         applySolarBackground(min, max, hz, col);
     });
-
-    setTimeout(function() {
-        reloadSolar();
-    }, 10000);
 }
 
 function applySolarBackground(min, max, hz, col) {
@@ -173,14 +180,15 @@ function applySolarBackground(min, max, hz, col) {
 }
 
 function reloadClock() {
+    
+    setTimeout(function() {
+        reloadClock();
+    }, 2000);
 
     date = moment(new Date());
 
     $("#time").html(date.format('HH:mm'));
     $("#date").html(date.format('dddd, DD. MMMM'));
-    setTimeout(function() {
-        reloadClock();
-    }, 2000);
 
 }
 
@@ -255,6 +263,11 @@ function OsterSonntag(Jahr, TagesDifferenz)
 }
 
 function reloadFamilyCalendar() {
+    
+    setTimeout(function() {
+        reloadFamilyCalendar();
+    }, 300000);
+    
     new ical_parser(fam_cal, function(cal) {
 
         events = cal.getFutureEvents();
@@ -271,9 +284,6 @@ function reloadFamilyCalendar() {
         })
         $("#family_calendar").html(text);
     });
-    setTimeout(function() {
-        reloadFamilyCalendar();
-    }, 300000);
 
 }
 
