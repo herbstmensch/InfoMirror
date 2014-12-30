@@ -200,6 +200,10 @@
     background-color: rgb(82,153,199);
     color: white;
 }
+.message.bioTonne{
+    background-color: rgb(82,199,153);
+    color: white;
+}
 .message.gelberSack{
     background-color: rgb(241,196,15);
     color: black;
