@@ -117,9 +117,9 @@
 
 #message_container {
     position:absolute;
-    top: 530px;
+    top: 500px;
     width: 98%;
-    height: 490px;
+    height: 525px;
     padding-top: 15px;
     text-align: center;
     overflow: hidden;
