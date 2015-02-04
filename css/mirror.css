@@ -23,8 +23,7 @@
     padding-top: 20px;
     padding-right: 20px;
 }
-#weather:after {
-    content:"";
+#weather_fade {
     position:absolute;
     top:340px;
     left:0;
@@ -60,8 +59,7 @@
     padding-left: 20px;
 }
 
-#family_calendar:after {
-    content:"";
+#family_calendar_fade {
     position:absolute;
     top:150px;
     left:0;
