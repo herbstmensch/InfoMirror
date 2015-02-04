@@ -23,6 +23,16 @@
     padding-top: 20px;
     padding-right: 20px;
 }
+#weather:after {
+    content:"";
+    position:absolute;
+    top:340px;
+    left:0;
+    height:140px;
+    width:100%;
+    background: -webkit-linear-gradient(#fff, #000);
+    background: linear-gradient(rgba(0,0,0,0), #000);
+}
 
 #weather_info {
     float: right;
@@ -49,6 +59,17 @@
     width:48%;
     overflow: hidden;
     padding-left: 20px;
+}
+
+#family_calendar:after {
+    content:"";
+    position:absolute;
+    top:150px;
+    left:0;
+    height:140px;
+    width:100%;
+    background: -webkit-linear-gradient(#fff, #000);
+    background: linear-gradient(rgba(0,0,0,0), #000);
 }
 
 .cal_entry {
