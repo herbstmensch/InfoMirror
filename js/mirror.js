@@ -272,7 +272,7 @@ function reloadFamilyCalendar() {
 
         events = cal.getFutureEvents();
         //do somthing with the events.
-        var text = '';
+        var text = '<div id=family_calendar_fade></div>';
         var i = 0;
         events.forEach(function(event) {
             if (i < 8) {
