@@ -28,6 +28,7 @@
     </head>
     <body>
         <div id="weather">
+            <div id="weather_fade"></div>
             <div id="weather_info" style="font-size: 25pt" ></div>
             <div id="weather_actual" style="font-size: 80pt;" ></div>
             <div id="weather_forecast" style="margin-left: 60px">
@@ -78,7 +79,9 @@
         <div id="message_container">
             <div id="messages"></div>
         </div>
-        <div id="family_calendar"></div>
+        <div id="family_calendar">
+            <div id="family_calendar_fade"></div>
+        </div>
         <div id="solar">
             <img id="solar_schema" src="img/solar.png"/>
             <div id="col"></div>
