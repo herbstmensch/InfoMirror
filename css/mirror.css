@@ -30,8 +30,6 @@
     left:0;
     height:140px;
     width:100%;
-    background: -webkit-linear-gradient(#fff, #000);
-    background: linear-gradient(rgba(0,0,0,0), #000);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0,0)), to(rgb(0, 0, 0)));
 }
 
@@ -69,8 +67,6 @@
     left:0;
     height:140px;
     width:100%;
-    background: -webkit-linear-gradient(#fff, #000);
-    background: linear-gradient(rgba(0,0,0,0), #000);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0,0)), to(rgb(0, 0, 0)));
 }
 
