@@ -2,6 +2,7 @@
     background: black;
     color: white;
     font-family: 'Nunito', sans-serif;
+	 -webkit-font-smoothing: antialiased;
 }
 
 #version {
