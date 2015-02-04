@@ -45,6 +45,8 @@
     float: right;
     text-align: left;
     padding-right: 80px;
+    margin-left: 60px;
+    margin-top: 8px;
 }
 
 #family_calendar {
