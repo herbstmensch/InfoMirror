@@ -166,10 +166,10 @@
 }
 
 .message:nth-child(odd) > * {
-    -o-transform:rotate(-4deg);
-    -webkit-transform:rotate(-4deg);
-    -moz-transform:rotate(-4deg);
-    transform:rotate(-4deg);
+    -o-transform:rotate(-9deg);
+    -webkit-transform:rotate(-9deg);
+    -moz-transform:rotate(-9deg);
+    transform:rotate(-9deg);
 }
 
 
