@@ -1,7 +1,7 @@
 var fam_cal = 'load_res.php?id=FAM_CAL';
 var forecast = 'load_res.php?id=FORECAST';
 var weather = 'load_res.php?id=WEATHER';
-var infos_url = 'load_res.php?id=INFO';
+var infos_url = 'load_res.php?id=INFOS';
 
 function reloadWeather() {
     
