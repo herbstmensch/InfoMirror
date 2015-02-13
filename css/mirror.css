@@ -53,10 +53,10 @@
 #family_calendar {
     white-space: nowrap;
     position:absolute;
-    top:190px;
+    top:225px;
     left:0px;
     font-size:20pt;
-    height:290px;
+    height:240px;
     width:48%;
     overflow: hidden;
     padding-left: 20px;
