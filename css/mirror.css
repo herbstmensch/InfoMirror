@@ -77,6 +77,10 @@
 
 .cal_summary {
     margin-right: 5px;
+    float: left;
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cal_diff {
