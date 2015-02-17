@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
+        <title>InfoMirror</title>
         <script src="js/lib/jquery-1.9.1.min.js"></script>
         <script src="js/lib/ical_parser.js"></script>
         <script src="js/lib/moment.js"></script>
