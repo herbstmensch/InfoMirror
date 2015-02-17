@@ -277,7 +277,7 @@ function reloadFamilyCalendar() {
         events.forEach(function(event) {
             if (i < 8) {
                 var diff = moment(event.DTSTART).startOf('day').diff(moment(new Date()).startOf('day'), 'days', true);
-                var when = diff == 0 ? ('Heute') : (diff == 1 ? ('Morgen') : ('In ' + diff + ' Tagen'))
+                var when = diff == 0 ? ('Heute') : (diff == 1 ? ('Morgen') : (event.DTSTART))
                 text += '<div class="cal_entry"><span class="cal_summary">' + event.SUMMARY + '</span><span class="cal_diff">' + when + '</span></div>';
             }
             i++;
