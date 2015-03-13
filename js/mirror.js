@@ -203,7 +203,18 @@ function addSpecialDay() {
             text = 'Herzlichen Glückwunsch Tim';
             break;
         case '152':
-            text = 'Herzlichen Glückwunsch Anna';
+            var n = Math.floor((Math.random() * 6) + 1);
+            var a = "";
+            switch (n) {
+                case 1: a = ' Süsse';
+                    break;
+                case 2: a = ' Schöne';
+                    break;
+                case 3: a = ', Liebe meines Lebens';
+                    break;
+                default: a = 'Anna';
+            }    
+            text = 'Herzlichen Glückwunsch'+a;
             break;
         case '2411':
         case '2511':
