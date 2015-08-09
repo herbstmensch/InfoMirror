@@ -6,6 +6,7 @@
         <script src="js/lib/ical_parser.js"></script>
         <script src="js/lib/moment.js"></script>
         <script src="js/mirror.js"></script>
+	<meta http-equiv="refresh" content="600">
         <link href="weather-icons-master/css/weather-icons.css" media="all" rel="stylesheet" type="text/css" />
         <link href="css/mirror.css" media="all" rel="stylesheet" type="text/css" />
         <link 
