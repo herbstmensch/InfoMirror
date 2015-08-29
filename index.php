@@ -102,6 +102,7 @@
 	    <div id="puffer_kessel_pipes"></div>
 	    <div id="hz_kessel_pipes_vl"></div>
 	    <div id="hz_kessel_pipes_rl"></div>
+	    <div id="hz_kessel_pipes_clear"></div>
 	    <div id="hz"></div>
 	    <div id="kessel">
 	        <div id="kessel_deco_1"></div>

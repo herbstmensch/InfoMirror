@@ -262,8 +262,7 @@ body{
 }
 
 #puffer_kessel_pipes {
-    border-top: solid 4px white;
-    border-bottom: solid 4px white;
+    border: solid 4px white;
     height: 70px;
     top: 211px;
     position: absolute;
@@ -273,8 +272,7 @@ body{
 }
 
 #hz_kessel_pipes_vl {
-    border-top: solid 4px white;
-    border-left: solid 4px white;
+    border: solid 4px white;
     height: 145px;
     top: 71px;
     position: absolute;
@@ -284,15 +282,22 @@ body{
 }
 
 #hz_kessel_pipes_rl {
-    border-top: solid 4px white;
-    border-right: solid 4px white;
-    border-bottom: solid 4px white;
+    border: solid 4px white;
     height: 171px;
     top: 110px;
     position: absolute;
     left: 453px;
     width: 90px;
     border-radius: 3px;
+}
+
+#hz_kessel_pipes_clear {
+    background-color: black;
+    height: 171px;
+    top: 110px;
+    position: absolute;
+    left: 453px;
+    width: 90px;
 }
 
 #kessel {
