@@ -105,12 +105,21 @@ function reloadSolar() {
         $("#solar_wwo_temp").html(getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 7']));
         $("#solar_wwu_temp").html(getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 2']));
         $("#solar_hz_temp").html(getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 4']));
+        $("#hz_vl_temp").html(getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 3']));
         $("#solar_pumpe").html(solar['DeltaSol BX Plus [Regler]']['Drehzahl Relais 1']);
+
+	var puffer_an = solar['DeltaSol BX Plus [Regler]']['Drehzahl Relais 4'] != '0 %';
+
+	if(puffer_an)
+	    $('#puffer_kessel_pipes').show();
+	else
+	    $('#puffer_kessel_pipes').hide();
 
         var min = getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 2']).replace('°', '');
         var max = getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 7']).replace('°', '');
         var hz = getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 4']).replace('°', '');
         var col = getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 1']).replace('°', '');
+        var hzk = getTemp(solar['DeltaSol BX Plus [Regler]']['Temperatur Sensor 3']).replace('°', '');
 
         $('#hz_puffer').removeClass('on');
         $('#ww_puffer').removeClass('on');
@@ -123,11 +132,11 @@ function reloadSolar() {
             }
         }
 
-        applySolarBackground(min, max, hz, col);
+        applySolarBackground(min, max, hz, col, hzk);
     });
 }
 
-function applySolarBackground(min, max, hz, col) {
+function applySolarBackground(min, max, hz, col, hzk) {
     var abs_min = 30;
     var abs_max = 75;
     if (min < abs_min)
@@ -150,16 +159,19 @@ function applySolarBackground(min, max, hz, col) {
     var min_r = Math.round(63 + (178 / (abs_max - abs_min)) * (min - abs_min), 0);
     var max_r = Math.round(63 + (178 / (abs_max - abs_min)) * (max - abs_min), 0);
     var hz_r = Math.round(63 + (178 / (abs_max - abs_min)) * (hz - abs_min), 0);
+    var hzk_r = Math.round(63 + (178 / (abs_max - abs_min)) * (hzk - abs_min), 0);
     var col_r = Math.round(63 + (178 / (abs_max - abs_min)) * (col - abs_min), 0);
 
     var min_g = Math.round(120 - (114 / (abs_max - abs_min)) * (min - abs_min), 0);
     var max_g = Math.round(120 - (114 / (abs_max - abs_min)) * (max - abs_min), 0);
     var hz_g = Math.round(120 - (114 / (abs_max - abs_min)) * (hz - abs_min), 0);
+    var hzk_g = Math.round(120 - (114 / (abs_max - abs_min)) * (hzk - abs_min), 0);
     var col_g = Math.round(120 - (114 / (abs_max - abs_min)) * (col - abs_min), 0);
 
     var min_b = Math.round(211 - (211 / (abs_max - abs_min)) * (min - abs_min), 0);
     var max_b = Math.round(211 - (211 / (abs_max - abs_min)) * (max - abs_min), 0);
     var hz_b = Math.round(211 - (211 / (abs_max - abs_min)) * (hz - abs_min), 0);
+    var hzk_b = Math.round(211 - (211 / (abs_max - abs_min)) * (hzk - abs_min), 0);
     var col_b = Math.round(211 - (211 / (abs_max - abs_min)) * (col - abs_min), 0);
 
     $('#ww_puffer').css({
@@ -175,6 +187,9 @@ function applySolarBackground(min, max, hz, col) {
     });
     $('#col').css({
         'background-color': "rgb(" + col_r + "," + col_g + "," + col_b + ")"
+    });
+    $('#hz').css({
+        'background-color': "rgb(" + hzk_r + "," + hzk_g + "," + hzk_b + ")"
     });
 }
 
