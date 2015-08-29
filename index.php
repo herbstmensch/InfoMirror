@@ -103,7 +103,10 @@
 	    <div id="hz_kessel_pipes_vl"></div>
 	    <div id="hz_kessel_pipes_rl"></div>
 	    <div id="hz"></div>
-	    <div id="kessel"></div>
+	    <div id="kessel">
+	        <div id="kessel_deco_1"></div>
+	        <div id="kessel_deco_2"></div>
+	    </div>
             <span id="hz_vl_temp"></span>
         </div>
         <div id="version"></div>
