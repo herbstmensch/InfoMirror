@@ -85,7 +85,10 @@
             <div id="family_calendar_fade"></div>
         </div>
         <div id="solar">
-            <img id="solar_schema" src="img/solar.png"/>
+            <div id="col_pipes"></div>
+	    <div id="col_clear"></div>
+	    <div id="puffer_pipes"></div>
+            <!--<img id="solar_schema" src="img/solar.png"/>-->
             <div id="col"></div>
             <span id="solar_col_temp"></span>
             <span id="solar_vl_temp"></span>
@@ -96,6 +99,12 @@
             <div id="hz_puffer"></div>
             <span id="solar_hz_temp"></span>
             <span id="solar_pumpe"></span>
+	    <div id="puffer_kessel_pipes"></div>
+	    <div id="hz_kessel_pipes_vl"></div>
+	    <div id="hz_kessel_pipes_rl"></div>
+	    <div id="hz"></div>
+	    <div id="kessel"></div>
+            <span id="hz_vl_temp"></span>
         </div>
         <div id="version"></div>
     </body>
