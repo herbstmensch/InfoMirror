@@ -293,10 +293,10 @@ body{
 
 #hz_kessel_pipes_clear {
     background-color: black;
-    height: 171px;
-    top: 110px;
+    height: 161px;
+    top: 122px;
     position: absolute;
-    left: 453px;
+    left: 427px;
     width: 90px;
 }
 
@@ -508,11 +508,3 @@ body{
   font-style:   normal;
   font-weight:  200;
 }
-
-
-
-
-
-
-
-
