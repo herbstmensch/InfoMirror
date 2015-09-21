@@ -50,7 +50,7 @@ function ical_parser(feed_url, callback) {
      * @return dt object, includes javascript Date + day name, hour/minutes/day/month/year etc.
      */
     this.makeDate = function(ical_date) {
-        console.log(ical_date);
+        //console.log(ical_date);
         //break date apart
         var dt = {
             year: ical_date.substr(0, 4),
@@ -97,7 +97,7 @@ function ical_parser(feed_url, callback) {
             if (in_event && ln == 'END:VEVENT') {
                 in_event = false;
                 this.events.push(cur_event);
-                console.log(cur_event);
+          //      console.log(cur_event);
                 cur_event = null;
             }
             //If we are in an event
@@ -144,10 +144,9 @@ function ical_parser(feed_url, callback) {
      * Sort all events in to a sensible order and run the original callback
      */
     this.complete = function() {
-        //Sort the data so its in date order.
-        this.events.sort(function(a, b) {
-            return a.DTSTART - b.DTSTART;
-        });
+
+	//Sorting events with Quick-Sort. Sorting algorithm of Midori-Browser does not do the sorting right
+	this.events = qsort(this.events);
         //Run callback method, if was defined. (return self)
         if (typeof callback == 'function')
             callback(this);
@@ -201,4 +200,41 @@ function ical_parser(feed_url, callback) {
     this.feed_url = feed_url;
     //Load the file
     this.load(this.feed_url);
+}
+
+function qsort(arr)
+{
+    var stack = [arr];
+    var sorted = [];
+ 
+    while (stack.length) {
+ 
+        var temp = stack.pop(), tl = temp.length;
+ 
+        if (tl == 1) {
+            sorted.push(temp[0]);
+            continue;
+        }
+        var pivot = temp[0];
+        var left = [], right = [];
+ 
+        for (var i = 1; i < tl; i++) {
+            if (temp[i].DTSTART - pivot.DTSTART < 0) {
+                left.push(temp[i]);
+            } else {
+                right.push(temp[i]);
+            }
+        }
+ 
+        left.push(pivot);
+ 
+        if (right.length)
+            stack.push(right);
+        if (left.length)
+            stack.push(left);
+ 
+    }
+
+    return sorted;
+ 
 }
